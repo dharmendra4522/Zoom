@@ -5,7 +5,7 @@ const meetingSchema = (
     {
         user_id: {type: String},
         meetingCode: {type: String, required: true},
-        date: {type: Data, default: Data.now, required: true}
+        date: {type: Date, default: Date.now, required: true}
     }
 )
 

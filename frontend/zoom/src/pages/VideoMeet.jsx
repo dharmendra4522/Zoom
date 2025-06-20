@@ -499,21 +499,63 @@ export default function VideoMeetComponent() {
   return (
     <div>
       {askForUsername === true ? (
-        <div>
-          <h2>Enter into Lobby </h2>
-          <TextField
-            id="outlined-basic"
-            label="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            variant="outlined"
-          />
-          <Button variant="contained" onClick={connect}>
-            Connect
-          </Button>
-
-          <div>
-            <video ref={localVideoref} autoPlay muted></video>
+        <div
+          style={{
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "none",
+          }}
+        >
+          <div
+            style={{
+              background: "rgba(255,255,255,0.92)",
+              borderRadius: 16,
+              boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.10)",
+              padding: 40,
+              minWidth: 400,
+              maxWidth: 600,
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 24,
+            }}
+          >
+            <h2 style={{ color: "#1976d2", fontWeight: 700, marginBottom: 16 }}>
+              Enter into Lobby
+            </h2>
+            <TextField
+              id="outlined-basic"
+              label="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              variant="outlined"
+              fullWidth
+              style={{ marginBottom: 16 }}
+            />
+            <Button
+              variant="contained"
+              onClick={connect}
+              fullWidth
+              style={{ fontWeight: 700, padding: "12px 0", borderRadius: 8 }}
+            >
+              Connect
+            </Button>
+            <div style={{ width: "100%", marginTop: 16 }}>
+              <video
+                ref={localVideoref}
+                autoPlay
+                muted
+                style={{
+                  width: "100%",
+                  maxWidth: 600,
+                  borderRadius: 8,
+                  background: "#222",
+                }}
+              ></video>
+            </div>
           </div>
         </div>
       ) : (
