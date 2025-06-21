@@ -16,7 +16,8 @@ const server = createServer(app); //http server
 const io = connectToSocket(server); //socket.io server
 
 const PORT = process.env.PORT || 8000;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/zoom";
+// const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://dharmendravishwakarma0711:dharmendra@4522@cluster0.qqhbpzx.mongodb.net/";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://dharmendravishwakarma0711:dharmendra%404522@cluster0.qqhbpzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 app.set("port", PORT);
 app.use(cors());
